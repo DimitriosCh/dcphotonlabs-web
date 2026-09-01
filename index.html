@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DC Photon Labs — Mobile & Software Engineering</title>
+<meta name="description" content="DC Photon Labs builds TravelFitAI and ReceiptoAI. Find privacy policies, terms of service, and developer support for both apps.">
+<style>
+  :root{
+    --bg:#0b0d12;
+    --bg-elev:#12151c;
+    --bg-elev-2:#171b24;
+    --border:#242938;
+    --text:#eef1f6;
+    --text-dim:#a4acbd;
+    --text-faint:#6b7385;
+    --accent:#5fd0ff;
+    --accent-2:#8b7bff;
+    --accent-contrast:#04121a;
+    --radius:14px;
+    --shadow:0 10px 30px -12px rgba(0,0,0,0.55);
+    --maxw:880px;
+  }
+  html[data-theme="light"]{
+    --bg:#f6f7fb;
+    --bg-elev:#ffffff;
+    --bg-elev-2:#eef0f6;
+    --border:#dfe3ec;
+    --text:#161a22;
+    --text-dim:#4c5566;
+    --text-faint:#7b8394;
+    --accent:#0d7fb0;
+    --accent-2:#5b4bd6;
+    --accent-contrast:#ffffff;
+    --shadow:0 10px 30px -14px rgba(20,30,60,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    transition:background .2s ease,color .2s ease;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    background:var(--bg-elev-2);
+    padding:.15em .4em;
+    border-radius:6px;
+    font-size:.9em;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  header.site{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:var(--maxw);margin:0 auto;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-0.01em;}
+  .brand .mark{
+    width:30px;height:30px;border-radius:9px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:800;color:var(--accent-contrast);
+    flex:none;
+  }
+  .brand span.name{font-size:16px;}
+  nav.links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  nav.links a{color:var(--text-dim);font-size:14px;font-weight:600;}
+  nav.links a:hover{color:var(--text);text-decoration:none;}
+  #theme-toggle{
+    border:1px solid var(--border);
+    background:var(--bg-elev);
+    color:var(--text);
+    border-radius:100px;
+    padding:7px 12px;
+    font-size:13px;
+    cursor:pointer;
+    font-weight:600;
+    line-height:1;
+  }
+  #theme-toggle:hover{border-color:var(--accent);}
+
+  main{padding-bottom:60px;}
+
+  .hero{padding:64px 0 40px;}
+  .hero .eyebrow{
+    color:var(--accent);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin:0 0 12px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  .hero h1{
+    margin:0 0 8px;
+    font-size:clamp(28px,5vw,42px);
+    letter-spacing:-0.02em;
+    font-weight:800;
+  }
+  .hero p.subtitle{
+    margin:0 0 20px;
+    color:var(--text-dim);
+    font-size:17px;
+  }
+  .hero p.lede{color:var(--text-dim);max-width:640px;margin:0;}
+
+  section{padding:44px 0;border-top:1px solid var(--border);}
+  section > .wrap > h2{
+    font-size:22px;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  section > .wrap > p.section-intro{
+    color:var(--text-dim);
+    margin:0 0 28px;
+    max-width:640px;
+    font-size:15px;
+  }
+
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+  .app-card{
+    background:var(--bg-elev);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .app-card .icon{
+    width:44px;height:44px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;margin-bottom:14px;
+  }
+  .app-card.tfa .icon{background:linear-gradient(135deg,#5fd0ff33,#8b7bff33);}
+  .app-card.rai .icon{background:linear-gradient(135deg,#ffb46b33,#ff6b9333);}
+  .app-card h3{margin:0 0 4px;font-size:17px;}
+  .app-card .tagline{
+    color:var(--text-faint);
+    font-size:12.5px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    margin:0 0 12px;
+  }
+  .app-card p.desc{color:var(--text-dim);font-size:14.5px;margin:0 0 16px;}
+  .app-card .card-links{display:flex;gap:10px;flex-wrap:wrap;font-size:13.5px;font-weight:600;}
+  .app-card .card-links a{
+    border:1px solid var(--border);
+    padding:6px 10px;
+    border-radius:8px;
+    color:var(--text);
+  }
+  .app-card .card-links a:hover{border-color:var(--accent);text-decoration:none;color:var(--accent);}
+
+  .tabs{
+    display:flex;flex-wrap:wrap;gap:8px;
+    margin-bottom:22px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:14px;
+  }
+  .tab-btn{
+    border:1px solid var(--border);
+    background:var(--bg-elev);
+    color:var(--text-dim);
+    padding:8px 14px;
+    border-radius:100px;
+    font-size:13.5px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .tab-btn:hover{color:var(--text);border-color:var(--accent);}
+  .tab-btn.active{
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    color:var(--accent-contrast);
+    border-color:transparent;
+  }
+
+  .legal-doc{
+    display:none;
+    background:var(--bg-elev);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:28px;
+    box-shadow:var(--shadow);
+  }
+  .legal-doc.active{display:block;}
+  .legal-doc h3{margin:0 0 4px;font-size:19px;}
+  .legal-doc .meta{color:var(--text-faint);font-size:12.5px;margin:0 0 20px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .legal-doc h4{
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--accent);
+    margin:22px 0 8px;
+  }
+  .legal-doc h4:first-of-type{margin-top:0;}
+  .legal-doc p, .legal-doc li{color:var(--text-dim);font-size:14.5px;}
+  .legal-doc ul{margin:6px 0 0;padding-left:20px;}
+  .legal-doc li{margin-bottom:4px;}
+  .legal-doc strong{color:var(--text);}
+
+  .support-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+  }
+  .support-card{
+    background:var(--bg-elev);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .support-card h3{margin:0 0 10px;font-size:15px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.04em;font-weight:700;}
+  .support-card p{margin:0;color:var(--text-dim);font-size:15px;}
+  .support-card p + p{margin-top:6px;}
+  .support-card address{font-style:normal;}
+
+  footer{
+    border-top:1px solid var(--border);
+    padding:28px 0 40px;
+  }
+  footer .wrap{
+    display:flex;flex-wrap:wrap;gap:10px 24px;
+    justify-content:space-between;
+    color:var(--text-faint);
+    font-size:13px;
+  }
+  footer a{color:var(--text-faint);}
+  footer a:hover{color:var(--accent);}
+
+  @media (max-width:560px){
+    .nav-row{flex-wrap:wrap;}
+    nav.links{gap:12px;}
+    section{padding:32px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-row">
+    <div class="brand">
+      <span class="mark">DC</span>
+      <span class="name">DC Photon Labs</span>
+    </div>
+    <nav class="links">
+      <a href="#apps">Apps</a>
+      <a href="#legal">Legal</a>
+      <a href="#support">Support</a>
+      <button id="theme-toggle" type="button" aria-label="Toggle color theme">🌓 Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="border-top:none;">
+    <div class="wrap">
+      <p class="eyebrow">DC Photon Labs</p>
+      <h1>DC Photon Labs</h1>
+      <p class="subtitle">Mobile &amp; Software Engineering</p>
+      <p class="lede">We design and build focused, AI-assisted mobile apps — including <strong>TravelFitAI</strong> and <strong>ReceiptoAI</strong>. This page hosts our privacy policies, terms of service, and developer support contact for both apps.</p>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="wrap">
+      <h2>Apps</h2>
+      <p class="section-intro">A small studio, a couple of sharp tools. Jump to legal docs for each app below.</p>
+      <div class="card-grid">
+
+        <article class="app-card tfa">
+          <div class="icon">🏋️</div>
+          <h3>TravelFitAI</h3>
+          <p class="tagline">AI-powered travel workout generator</p>
+          <p class="desc">TravelFitAI builds personalized workout routines around your trip — your destination, available equipment, hotel gym or none at all — using AI to generate a plan you can actually follow on the road.</p>
+          <div class="card-links">
+            <a href="#travelfitai-privacy">Privacy Policy</a>
+            <a href="#travelfitai-terms">Terms of Service</a>
+          </div>
+        </article>
+
+        <article class="app-card rai">
+          <div class="icon">🧾</div>
+          <h3>ReceiptoAI</h3>
+          <p class="tagline">Smart travel receipt &amp; expense tracker</p>
+          <p class="desc">ReceiptoAI scans and organizes travel receipts using your camera or photo library, extracting line items and totals with AI so you can track trip expenses without manual data entry.</p>
+          <div class="card-links">
+            <a href="#receiptoai-privacy">Privacy Policy</a>
+            <a href="#receiptoai-terms">Terms of Service</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="legal">
+    <div class="wrap">
+      <h2>Legal Hub</h2>
+      <p class="section-intro">Privacy policies and terms of service for TravelFitAI and ReceiptoAI. Select a document below, or link directly to a section using the anchors in the URL (e.g. <code>#receiptoai-privacy</code>).</p>
+
+      <div class="tabs" role="tablist" aria-label="Legal documents">
+        <button class="tab-btn" data-target="travelfitai-privacy" type="button">TravelFitAI · Privacy</button>
+        <button class="tab-btn" data-target="travelfitai-terms" type="button">TravelFitAI · Terms</button>
+        <button class="tab-btn" data-target="receiptoai-privacy" type="button">ReceiptoAI · Privacy</button>
+        <button class="tab-btn" data-target="receiptoai-terms" type="button">ReceiptoAI · Terms</button>
+      </div>
+
+      <!-- TravelFitAI Privacy Policy -->
+      <article id="travelfitai-privacy" class="legal-doc">
+        <h3>TravelFitAI — Privacy Policy</h3>
+        <p class="meta">Last updated: September 1, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
+
+        <h4>Overview</h4>
+        <p>This Privacy Policy explains how TravelFitAI ("the App"), operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our"), collects, uses, and protects information when you use the App.</p>
+
+        <h4>Data Collection</h4>
+        <p>We collect the minimum data required to generate and personalize your workout plans:</p>
+        <ul>
+          <li><strong>Account data:</strong> email address and authentication identifiers, if you create an account.</li>
+          <li><strong>Fitness profile data:</strong> fitness level, goals, available equipment, injuries or limitations you choose to disclose, and trip details (destination, dates, hotel/gym availability) you enter to generate a plan.</li>
+          <li><strong>Usage data:</strong> app interactions, generated plans, and crash/diagnostic logs used to improve reliability.</li>
+          <li><strong>Device data:</strong> device model, OS version, and locale, collected automatically for compatibility and support purposes.</li>
+        </ul>
+
+        <h4>Third-Party AI APIs</h4>
+        <p>TravelFitAI uses third-party artificial intelligence providers to generate workout recommendations. Data you submit to generate a plan (such as fitness goals, equipment, and trip details) may be transmitted to these AI service providers strictly to produce your workout output. This data is processed under each provider's own data-handling terms and is not used by us to train third-party foundation models. We do not knowingly send government IDs, financial account numbers, or precise health/medical records to AI providers.</p>
+
+        <h4>Device Camera &amp; Photos Permissions</h4>
+        <p>TravelFitAI may request access to your device's <strong>camera or photo library</strong> only if you choose to attach an optional progress photo or profile picture to your account. This access is opt-in, used solely for the feature you invoke, and is never activated in the background. You can deny or revoke this permission at any time in your device settings without losing access to core workout-generation features.</p>
+
+        <h4>How We Use Your Data</h4>
+        <ul>
+          <li>To generate and personalize your workout plans.</li>
+          <li>To operate, maintain, and improve the App.</li>
+          <li>To provide customer support and respond to inquiries.</li>
+          <li>To detect, prevent, and address technical issues, fraud, or abuse.</li>
+        </ul>
+
+        <h4>Data Sharing</h4>
+        <p>We do not sell your personal data. We share data only with: (a) AI service providers as described above, strictly to generate your requested content; (b) infrastructure providers (hosting, analytics, crash reporting) acting on our behalf; and (c) authorities where required by law.</p>
+
+        <h4>Data Retention</h4>
+        <p>We retain account and fitness profile data for as long as your account is active, or as needed to provide the App's features. You may request deletion at any time as described below.</p>
+
+        <h4>User Rights</h4>
+        <p>Depending on your location (including under GDPR and CCPA/CPRA), you may have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you.</li>
+          <li>Request correction of inaccurate data.</li>
+          <li>Request deletion of your data ("right to be forgotten").</li>
+          <li>Request a portable copy of your data.</li>
+          <li>Object to or restrict certain processing, and withdraw consent at any time.</li>
+          <li>Lodge a complaint with your local data protection authority.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>. We will respond within the time required by applicable law.</p>
+
+        <h4>Children's Privacy</h4>
+        <p>TravelFitAI is not directed at children under 13 (or the minimum age required by your jurisdiction), and we do not knowingly collect personal data from children.</p>
+
+        <h4>Security</h4>
+        <p>We use industry-standard technical and organizational measures to protect your data. No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+        <h4>Legal Operator</h4>
+        <p>TravelFitAI is developed and operated by <strong>DC Photon Labs</strong>, an app development studio operated by <strong>optEngineering LP</strong>, registered at 8 Ippodameias Square, 18531 Piraeus, Greece.</p>
+
+        <h4>Changes to This Policy</h4>
+        <p>We may update this Privacy Policy from time to time. Material changes will be reflected by an updated "Last updated" date on this page.</p>
+
+        <h4>Contact</h4>
+        <p>Questions about this Privacy Policy? Email <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>.</p>
+      </article>
+
+      <!-- TravelFitAI Terms of Service -->
+      <article id="travelfitai-terms" class="legal-doc">
+        <h3>TravelFitAI — Terms of Service</h3>
+        <p class="meta">Last updated: September 1, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
+
+        <h4>Acceptance of Terms</h4>
+        <p>By downloading, accessing, or using TravelFitAI (the "App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the App. The App is operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our").</p>
+
+        <h4>Eligibility</h4>
+        <p>You must be at least 13 years old (or the minimum digital consent age in your jurisdiction) to use the App. By using the App, you represent that you meet this requirement.</p>
+
+        <h4>License Grant</h4>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial use, subject to these Terms.</p>
+
+        <h4>AI-Generated Content Disclaimer</h4>
+        <p>Workout plans and recommendations are generated using artificial intelligence and are provided <strong>"as is"</strong> for informational and motivational purposes only. They do <strong>not</strong> constitute medical, health, or professional fitness advice. Always consult a qualified physician or certified trainer before starting any exercise program, especially if you have a pre-existing medical condition. You assume full responsibility for any injury or harm resulting from use of AI-generated workout content.</p>
+
+        <h4>User Responsibilities</h4>
+        <ul>
+          <li>Provide accurate information when creating your fitness profile.</li>
+          <li>Use the App only for lawful purposes.</li>
+          <li>Do not attempt to reverse-engineer, decompile, or misuse the App or its AI features.</li>
+          <li>Do not use the App to generate content that is unlawful, harmful, or infringing.</li>
+        </ul>
+
+        <h4>Subscriptions &amp; Purchases</h4>
+        <p>Certain features may require a paid subscription or one-time purchase processed through the applicable app store (Apple App Store or Google Play). Billing, renewal, and cancellation are governed by that platform's terms. All purchases are subject to the platform's refund policy.</p>
+
+        <h4>Intellectual Property</h4>
+        <p>The App, its design, branding, and underlying software are owned by DC Photon Labs (optEngineering LP) and protected by intellectual property laws. You retain ownership of data you input, but grant us a limited license to process it to provide the App's functionality.</p>
+
+        <h4>Termination</h4>
+        <p>We may suspend or terminate your access to the App at any time for violation of these Terms or for any reason permitted by law. You may stop using the App and delete your account at any time.</p>
+
+        <h4>Disclaimer of Warranties</h4>
+        <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, express or implied, including fitness for a particular purpose, accuracy, or non-infringement.</p>
+
+        <h4>Limitation of Liability</h4>
+        <p>To the maximum extent permitted by law, DC Photon Labs (optEngineering LP) shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including personal injury, arising from your use of the App or reliance on AI-generated content.</p>
+
+        <h4>Governing Law</h4>
+        <p>These Terms are governed by the laws of the Hellenic Republic (Greece), without regard to conflict-of-law principles, and without prejudice to any mandatory consumer-protection rights you may have under the laws of your country of residence.</p>
+
+        <h4>Changes to These Terms</h4>
+        <p>We may update these Terms periodically. Continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
+
+        <h4>Contact</h4>
+        <p>Questions about these Terms? Email <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>.</p>
+      </article>
+
+      <!-- ReceiptoAI Privacy Policy -->
+      <article id="receiptoai-privacy" class="legal-doc">
+        <h3>ReceiptoAI — Privacy Policy</h3>
+        <p class="meta">Last updated: September 1, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
+
+        <h4>Overview</h4>
+        <p>This Privacy Policy explains how ReceiptoAI ("the App"), operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our"), collects, uses, and protects information when you use the App.</p>
+
+        <h4>Data Collection</h4>
+        <p>To scan and organize your travel receipts, we collect:</p>
+        <ul>
+          <li><strong>Account data:</strong> email address and authentication identifiers, if you create an account.</li>
+          <li><strong>Receipt content:</strong> images of receipts you capture or upload, and the data extracted from them (merchant name, date, line items, amounts, currency, and category).</li>
+          <li><strong>Expense &amp; trip data:</strong> trip names, budgets, and expense reports you create within the App.</li>
+          <li><strong>Usage data:</strong> app interactions and crash/diagnostic logs used to improve reliability.</li>
+          <li><strong>Device data:</strong> device model, OS version, and locale, collected automatically for compatibility and support purposes.</li>
+        </ul>
+
+        <h4>Third-Party AI APIs</h4>
+        <p>ReceiptoAI uses third-party artificial intelligence and optical character recognition (OCR) providers to extract text and data from receipt images you capture or upload. Receipt images and extracted text may be transmitted to these providers strictly to perform this extraction and are processed under each provider's own data-handling terms. We do not use your receipt images to train third-party foundation models, and we do not sell receipt data to third parties.</p>
+
+        <h4>Device Camera &amp; Photos Permissions</h4>
+        <p>ReceiptoAI requests access to your device's <strong>camera</strong> to let you photograph receipts directly, and to your <strong>photo library</strong> to let you import existing receipt images. These permissions are used exclusively to capture or select receipt images for scanning and are never accessed in the background or for any purpose unrelated to receipt scanning. You can deny or revoke camera and photo access at any time in your device settings; doing so will limit you to manual expense entry only.</p>
+
+        <h4>How We Use Your Data</h4>
+        <ul>
+          <li>To extract and organize receipt and expense data on your behalf.</li>
+          <li>To generate expense reports and summaries you request.</li>
+          <li>To operate, maintain, and improve the App.</li>
+          <li>To provide customer support and respond to inquiries.</li>
+          <li>To detect, prevent, and address technical issues, fraud, or abuse.</li>
+        </ul>
+
+        <h4>Data Sharing</h4>
+        <p>We do not sell your personal data. We share data only with: (a) AI/OCR service providers as described above, strictly to process your receipts; (b) infrastructure providers (hosting, analytics, crash reporting, cloud storage) acting on our behalf; and (c) authorities where required by law.</p>
+
+        <h4>Data Retention</h4>
+        <p>We retain receipts, expense data, and account data for as long as your account is active, or as needed to provide the App's features (e.g., historical expense reports). You may request deletion at any time as described below.</p>
+
+        <h4>User Rights</h4>
+        <p>Depending on your location (including under GDPR and CCPA/CPRA), you may have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you, including stored receipts.</li>
+          <li>Request correction of inaccurate extracted data.</li>
+          <li>Request deletion of your data ("right to be forgotten").</li>
+          <li>Request a portable copy of your data (e.g., export of expense reports).</li>
+          <li>Object to or restrict certain processing, and withdraw consent at any time.</li>
+          <li>Lodge a complaint with your local data protection authority.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>. We will respond within the time required by applicable law.</p>
+
+        <h4>Children's Privacy</h4>
+        <p>ReceiptoAI is not directed at children under 13 (or the minimum age required by your jurisdiction), and we do not knowingly collect personal data from children.</p>
+
+        <h4>Security</h4>
+        <p>We use industry-standard technical and organizational measures, including encryption in transit, to protect your receipts and data. No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+        <h4>Legal Operator</h4>
+        <p>ReceiptoAI is developed and operated by <strong>DC Photon Labs</strong>, an app development studio operated by <strong>optEngineering LP</strong>, registered at 8 Ippodameias Square, 18531 Piraeus, Greece.</p>
+
+        <h4>Changes to This Policy</h4>
+        <p>We may update this Privacy Policy from time to time. Material changes will be reflected by an updated "Last updated" date on this page.</p>
+
+        <h4>Contact</h4>
+        <p>Questions about this Privacy Policy? Email <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>.</p>
+      </article>
+
+      <!-- ReceiptoAI Terms of Service -->
+      <article id="receiptoai-terms" class="legal-doc">
+        <h3>ReceiptoAI — Terms of Service</h3>
+        <p class="meta">Last updated: September 1, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
+
+        <h4>Acceptance of Terms</h4>
+        <p>By downloading, accessing, or using ReceiptoAI (the "App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the App. The App is operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our").</p>
+
+        <h4>Eligibility</h4>
+        <p>You must be at least 13 years old (or the minimum digital consent age in your jurisdiction) to use the App. By using the App, you represent that you meet this requirement.</p>
+
+        <h4>License Grant</h4>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal or internal business use, subject to these Terms.</p>
+
+        <h4>AI-Generated Content Disclaimer</h4>
+        <p>Data extracted from receipts (amounts, dates, categories, currency conversions, and summaries) is generated using artificial intelligence and OCR technology and is provided <strong>"as is"</strong>. Extraction may contain errors. ReceiptoAI is a productivity tool only and does <strong>not</strong> provide tax, accounting, financial, or legal advice. You are solely responsible for verifying the accuracy of any receipt data or expense report before relying on it for reimbursement, tax filing, or accounting purposes.</p>
+
+        <h4>User Responsibilities</h4>
+        <ul>
+          <li>Provide accurate information and only submit receipts you are authorized to process.</li>
+          <li>Use the App only for lawful purposes.</li>
+          <li>Do not attempt to reverse-engineer, decompile, or misuse the App or its AI/OCR features.</li>
+          <li>Do not upload fraudulent, altered, or misleading receipt images.</li>
+        </ul>
+
+        <h4>Subscriptions &amp; Purchases</h4>
+        <p>Certain features (such as unlimited scans or advanced export) may require a paid subscription or one-time purchase processed through the applicable app store (Apple App Store or Google Play). Billing, renewal, and cancellation are governed by that platform's terms. All purchases are subject to the platform's refund policy.</p>
+
+        <h4>Intellectual Property</h4>
+        <p>The App, its design, branding, and underlying software are owned by DC Photon Labs (optEngineering LP) and protected by intellectual property laws. You retain ownership of your receipts and data, but grant us a limited license to process them to provide the App's functionality.</p>
+
+        <h4>Termination</h4>
+        <p>We may suspend or terminate your access to the App at any time for violation of these Terms or for any reason permitted by law. You may stop using the App and delete your account and stored receipts at any time.</p>
+
+        <h4>Disclaimer of Warranties</h4>
+        <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, express or implied, including fitness for a particular purpose, accuracy of extracted data, or non-infringement.</p>
+
+        <h4>Limitation of Liability</h4>
+        <p>To the maximum extent permitted by law, DC Photon Labs (optEngineering LP) shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including financial loss arising from inaccurate expense data or reliance on AI-extracted content.</p>
+
+        <h4>Governing Law</h4>
+        <p>These Terms are governed by the laws of the Hellenic Republic (Greece), without regard to conflict-of-law principles, and without prejudice to any mandatory consumer-protection rights you may have under the laws of your country of residence.</p>
+
+        <h4>Changes to These Terms</h4>
+        <p>We may update these Terms periodically. Continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
+
+        <h4>Contact</h4>
+        <p>Questions about these Terms? Email <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="wrap">
+      <h2>Support &amp; Contact</h2>
+      <p class="section-intro">Need help with TravelFitAI or ReceiptoAI, or have a legal/privacy question? Reach out below.</p>
+      <div class="support-grid">
+        <div class="support-card">
+          <h3>Email Support</h3>
+          <p><a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a></p>
+          <p>We aim to respond within 2–3 business days.</p>
+        </div>
+        <div class="support-card">
+          <h3>Developer / Legal Entity</h3>
+          <address>
+            <p><strong>optEngineering LP</strong></p>
+            <p>8 Ippodameias Square</p>
+            <p>18531 Piraeus, Greece</p>
+          </address>
+        </div>
+        <div class="support-card">
+          <h3>About the Studio</h3>
+          <p>DC Photon Labs is an app development umbrella operated by optEngineering LP, building focused mobile tools like TravelFitAI and ReceiptoAI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> DC Photon Labs — operated by optEngineering LP. All rights reserved.</span>
+    <span>
+      <a href="#travelfitai-privacy">TravelFitAI Privacy</a> ·
+      <a href="#travelfitai-terms">TravelFitAI Terms</a> ·
+      <a href="#receiptoai-privacy">ReceiptoAI Privacy</a> ·
+      <a href="#receiptoai-terms">ReceiptoAI Terms</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var THEME_KEY = "dcpl-theme";
+  var root = document.documentElement;
+  var toggleBtn = document.getElementById("theme-toggle");
+
+  function applyTheme(theme){
+    root.setAttribute("data-theme", theme);
+    try { localStorage.setItem(THEME_KEY, theme); } catch(e){}
+  }
+
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem(THEME_KEY); } catch(e){}
+  if (savedTheme){
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches){
+    applyTheme("light");
+  }
+
+  toggleBtn.addEventListener("click", function(){
+    var current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
+    applyTheme(current === "light" ? "dark" : "light");
+  });
+
+  var docIds = ["travelfitai-privacy","travelfitai-terms","receiptoai-privacy","receiptoai-terms"];
+  var tabButtons = Array.prototype.slice.call(document.querySelectorAll(".tab-btn"));
+
+  function showDoc(id){
+    if (docIds.indexOf(id) === -1) { id = docIds[0]; }
+    docIds.forEach(function(docId){
+      var doc = document.getElementById(docId);
+      if (doc) { doc.classList.toggle("active", docId === id); }
+    });
+    tabButtons.forEach(function(btn){
+      btn.classList.toggle("active", btn.getAttribute("data-target") === id);
+    });
+  }
+
+  tabButtons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var target = btn.getAttribute("data-target");
+      showDoc(target);
+      history.replaceState(null, "", "#" + target);
+    });
+  });
+
+  function docIdFromHash(){
+    var hash = window.location.hash.replace("#", "");
+    return docIds.indexOf(hash) !== -1 ? hash : null;
+  }
+
+  function handleHash(){
+    var id = docIdFromHash();
+    if (id){
+      showDoc(id);
+      var el = document.getElementById(id);
+      if (el){ setTimeout(function(){ el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 0); }
+    }
+  }
+
+  window.addEventListener("hashchange", handleHash);
+  showDoc(docIdFromHash() || docIds[0]);
+  if (docIdFromHash()){ handleHash(); }
+
+  var yearEl = document.getElementById("year");
+  if (yearEl){ yearEl.textContent = new Date().getFullYear(); }
+})();
+</script>
+
+</body>
+</html>
