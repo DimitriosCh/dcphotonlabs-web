@@ -441,62 +441,96 @@
       <!-- ReceiptoAI Privacy Policy -->
       <article id="receiptoai-privacy" class="legal-doc">
         <h3>ReceiptoAI — Privacy Policy</h3>
-        <p class="meta">Last updated: September 1, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
+        <p class="meta">Last updated: September 16, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
 
         <h4>Overview</h4>
-        <p>This Privacy Policy explains how ReceiptoAI ("the App"), operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our"), collects, uses, and protects information when you use the App.</p>
+        <p>This Privacy Policy explains how ReceiptoAI ("the Service"), including our <strong>Android app</strong>, <strong>web app</strong> at <a href="https://receiptoai.com">receiptoai.com</a>, and related backend services, collects, uses, and protects information when you use the Service. The Service is operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our").</p>
 
-        <h4>Data Collection</h4>
-        <p>To scan and organize your travel receipts, we collect:</p>
+        <h4>Data We Collect</h4>
+        <p>To scan, organize, and report on your travel receipts, we collect:</p>
         <ul>
-          <li><strong>Account data:</strong> email address and authentication identifiers, if you create an account.</li>
-          <li><strong>Receipt content:</strong> images of receipts you capture or upload, and the data extracted from them (merchant name, date, line items, amounts, currency, and category).</li>
-          <li><strong>Expense &amp; trip data:</strong> trip names, budgets, and expense reports you create within the App.</li>
-          <li><strong>Usage data:</strong> app interactions and crash/diagnostic logs used to improve reliability.</li>
-          <li><strong>Device data:</strong> device model, OS version, and locale, collected automatically for compatibility and support purposes.</li>
+          <li><strong>Account data:</strong> email address, authentication identifiers (including when you sign in with email/password or Google Sign-In), display name, language and currency preferences, and onboarding choices.</li>
+          <li><strong>Tax &amp; profile data:</strong> optional tax identification numbers you provide (such as Greek <strong>ΑΦΜ</strong> / EU VAT ID), account type (personal or business), and optional signature name fields.</li>
+          <li><strong>Receipt content:</strong> images and PDFs you capture, upload, or forward; data extracted from them (merchant name, date, line items, amounts, currency, category, merchant tax IDs found on receipts); and edits you make.</li>
+          <li><strong>Email-in data:</strong> if you use email forwarding, we assign you a personal forwarding address (<code>receipts+&lt;alias&gt;@receipts.dcphotonlabs.com</code>) and process inbound messages you send there, including sender address, subject, message body or plain-text content, attachments, and delivery metadata needed to create receipts.</li>
+          <li><strong>Expense &amp; trip data:</strong> trip names, date ranges, tags, tag groups, budgets, and expense reports (including generated PDF/CSV exports).</li>
+          <li><strong>Signature image:</strong> optional PNG signature you upload for PDF reports, stored in our cloud storage.</li>
+          <li><strong>Organization / B2B data:</strong> if you redeem a company license code, we store the organization identifier, your seat membership, and license status linked to your account.</li>
+          <li><strong>Subscription &amp; usage data:</strong> premium status, scan/export limits, last data-export timestamp, and app interactions needed to operate features and prevent abuse.</li>
+          <li><strong>Technical &amp; device data:</strong> device model, operating system, browser type (web), locale, crash/diagnostic logs, and IP-derived metadata processed by our infrastructure providers for security and reliability.</li>
         </ul>
 
-        <h4>Third-Party AI APIs</h4>
-        <p>ReceiptoAI uses third-party artificial intelligence and optical character recognition (OCR) providers to extract text and data from receipt images you capture or upload. Receipt images and extracted text may be transmitted to these providers strictly to perform this extraction and are processed under each provider's own data-handling terms. We do not use your receipt images to train third-party foundation models, and we do not sell receipt data to third parties.</p>
+        <h4>Legal Basis for Processing (GDPR)</h4>
+        <p>If you are in the European Economic Area, United Kingdom, or another jurisdiction requiring a legal basis, we process personal data as follows:</p>
+        <ul>
+          <li><strong>Performance of a contract</strong> — to create and maintain your account; scan, store, tag, and organize receipts; generate reports and exports; operate email-in forwarding; and provide premium features you subscribe to.</li>
+          <li><strong>Legitimate interests</strong> — to secure the Service, prevent fraud and abuse, enforce our terms, improve reliability, and maintain accurate subscription limits, balanced against your rights.</li>
+          <li><strong>Legal obligation</strong> — where we must retain or disclose information to comply with applicable law.</li>
+          <li><strong>Consent</strong> — only where we explicitly ask for consent (for example, optional permissions you can revoke in device or browser settings). You may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.</li>
+        </ul>
 
-        <h4>Device Camera &amp; Photos Permissions</h4>
-        <p>ReceiptoAI requests access to your device's <strong>camera</strong> to let you photograph receipts directly, and to your <strong>photo library</strong> to let you import existing receipt images. These permissions are used exclusively to capture or select receipt images for scanning and are never accessed in the background or for any purpose unrelated to receipt scanning. You can deny or revoke camera and photo access at any time in your device settings; doing so will limit you to manual expense entry only.</p>
+        <h4>Third-Party AI &amp; OCR Processing</h4>
+        <p>ReceiptoAI uses <strong>OpenRouter</strong> to route receipt extraction requests to third-party artificial intelligence and OCR models (which may include models such as <strong>Google Gemini</strong>). Receipt images, PDFs, and extracted or forwarded text may be transmitted to these providers strictly to perform extraction and are processed under their own data-handling terms. We do not use your receipt content to train third-party foundation models, and we do not sell receipt data to third parties.</p>
+
+        <h4>Service Providers (Processors)</h4>
+        <p>We use trusted providers that process data on our behalf, including:</p>
+        <ul>
+          <li><strong>Google Firebase / Google Cloud</strong> — authentication, database (Firestore), file storage, serverless functions, and hosting (including <code>receiptoai.com</code>).</li>
+          <li><strong>Google Sign-In</strong> — optional account sign-in on mobile and web.</li>
+          <li><strong>OpenRouter</strong> — AI inference routing for receipt extraction (see above).</li>
+          <li><strong>Resend</strong> — inbound email receipt forwarding at <code>receipts.dcphotonlabs.com</code>.</li>
+        </ul>
+        <p>These providers act as <strong>processors</strong> under our instructions. Some may process data in the United States or other countries outside the European Economic Area. Where required, we rely on appropriate safeguards such as the European Commission's <strong>Standard Contractual Clauses</strong> and/or equivalent transfer mechanisms offered by our providers.</p>
+
+        <h4>Device Camera, Photos &amp; Files</h4>
+        <p>ReceiptoAI requests access to your device's <strong>camera</strong> to photograph receipts, to your <strong>photo library</strong> to import existing images, and to local files for uploads. On the web app, you choose files from your browser. These permissions are used only when you initiate a scan or upload and are not used in the background for unrelated purposes. You can deny or revoke access in device or browser settings; some features (camera scan, gallery import, or email-in attachments you do not forward) may then be unavailable.</p>
+
+        <h4>Cookies &amp; Similar Technologies (Web App)</h4>
+        <p>The web app at <a href="https://receiptoai.com">receiptoai.com</a> uses strictly necessary authentication session mechanisms operated by Firebase Auth and may store functional preferences (such as language) in your browser's <strong>local storage</strong>. We do not use third-party advertising cookies on the Service. You can clear site data in your browser settings, which may sign you out or reset preferences.</p>
 
         <h4>How We Use Your Data</h4>
         <ul>
-          <li>To extract and organize receipt and expense data on your behalf.</li>
-          <li>To generate expense reports and summaries you request.</li>
-          <li>To operate, maintain, and improve the App.</li>
+          <li>To extract, organize, tag, and search receipt and expense data on your behalf.</li>
+          <li>To process email you forward to your personal ReceiptoAI address and create receipts from attachments or message content.</li>
+          <li>To generate expense reports, PDF/CSV exports, and data exports you request.</li>
+          <li>To operate subscriptions, license codes, and usage limits (including free-tier scan limits).</li>
+          <li>To operate, maintain, secure, and improve the Service.</li>
           <li>To provide customer support and respond to inquiries.</li>
           <li>To detect, prevent, and address technical issues, fraud, or abuse.</li>
         </ul>
 
         <h4>Data Sharing</h4>
-        <p>We do not sell your personal data. We share data only with: (a) AI/OCR service providers as described above, strictly to process your receipts; (b) infrastructure providers (hosting, analytics, crash reporting, cloud storage) acting on our behalf; and (c) authorities where required by law.</p>
+        <p>We do not sell your personal data. We share data only with: (a) AI/OCR and email service providers as described above, strictly to provide the Service; (b) infrastructure providers acting on our behalf; and (c) authorities where required by law.</p>
 
         <h4>Data Retention</h4>
-        <p>We retain receipts, expense data, and account data for as long as your account is active, or as needed to provide the App's features (e.g., historical expense reports). You may request deletion at any time as described below.</p>
+        <p>We retain receipts, expense data, exports, and account data for as long as your account is active and as needed to provide the Service (for example, historical expense reports). When you delete your account (see below), we erase personal data from our active systems, including Firestore records, email-alias mappings, organization membership links, and files in cloud storage (receipt images, report PDFs, signature images, and prior export files). Residual copies in encrypted backups, if any, are removed on our normal backup rotation cycle (typically within 30 days).</p>
 
-        <h4>User Rights</h4>
+        <h4>Your Rights &amp; Self-Service Tools</h4>
         <p>Depending on your location (including under GDPR and CCPA/CPRA), you may have the right to:</p>
         <ul>
-          <li>Access the personal data we hold about you, including stored receipts.</li>
-          <li>Request correction of inaccurate extracted data.</li>
+          <li>Access the personal data we hold about you.</li>
+          <li>Request correction of inaccurate extracted or profile data.</li>
           <li>Request deletion of your data ("right to be forgotten").</li>
-          <li>Request a portable copy of your data (e.g., export of expense reports).</li>
-          <li>Object to or restrict certain processing, and withdraw consent at any time.</li>
+          <li>Request a portable copy of your data.</li>
+          <li>Object to or restrict certain processing, and withdraw consent where processing is consent-based.</li>
           <li>Lodge a complaint with your local data protection authority.</li>
         </ul>
-        <p>To exercise any of these rights, contact us at <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>. We will respond within the time required by applicable law.</p>
+        <p><strong>In the app and on the web</strong>, you can:</p>
+        <ul>
+          <li><strong>Delete your account</strong> — in Account settings (Profile on mobile). This permanently deletes your account and associated personal data as described under Data Retention.</li>
+          <li><strong>Download your data</strong> — Premium subscribers can export a machine-readable summary (JSON) or a full archive (ZIP with data and files) from Account settings. Exports are rate-limited to once every 48 hours.</li>
+        </ul>
+        <p>You may also contact us at <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a> to exercise your rights. We will respond within the time required by applicable law.</p>
+        <p>If you are in Greece, you may lodge a complaint with the <strong>Hellenic Data Protection Authority (ΑΠΔΠΧ)</strong>: <a href="https://www.dpa.gr" rel="noopener">www.dpa.gr</a>.</p>
 
         <h4>Children's Privacy</h4>
         <p>ReceiptoAI is not directed at children under 13 (or the minimum age required by your jurisdiction), and we do not knowingly collect personal data from children.</p>
 
         <h4>Security</h4>
-        <p>We use industry-standard technical and organizational measures, including encryption in transit, to protect your receipts and data. No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+        <p>We use industry-standard technical and organizational measures, including encryption in transit and access controls on cloud infrastructure, to protect your receipts and data. No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
 
-        <h4>Legal Operator</h4>
-        <p>ReceiptoAI is developed and operated by <strong>DC Photon Labs</strong>, an app development studio operated by <strong>optEngineering LP</strong>, registered at 8 Ippodameias Square, 18531 Piraeus, Greece.</p>
+        <h4>Data Controller</h4>
+        <p>ReceiptoAI is developed and operated by <strong>DC Photon Labs</strong>, an app development studio operated by <strong>optEngineering LP</strong> (Limited Partnership), registered at 8 Ippodameias Square, 18531 Piraeus, Greece. GEMI (EUID): ELGEMI.173705209000 · VAT (ΑΦΜ): EL802288770. Contact: <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>.</p>
 
         <h4>Changes to This Policy</h4>
         <p>We may update this Privacy Policy from time to time. Material changes will be reflected by an updated "Last updated" date on this page.</p>
@@ -508,39 +542,62 @@
       <!-- ReceiptoAI Terms of Service -->
       <article id="receiptoai-terms" class="legal-doc">
         <h3>ReceiptoAI — Terms of Service</h3>
-        <p class="meta">Last updated: September 1, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
+        <p class="meta">Last updated: September 16, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
 
         <h4>Acceptance of Terms</h4>
-        <p>By downloading, accessing, or using ReceiptoAI (the "App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the App. The App is operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our").</p>
+        <p>By downloading, accessing, or using ReceiptoAI (the "Service"), including our Android app, web app at <a href="https://receiptoai.com">receiptoai.com</a>, or related services, you agree to be bound by these Terms of Service ("Terms") and our <a href="#receiptoai-privacy">Privacy Policy</a>. If you do not agree, do not use the Service. The Service is operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our").</p>
+
+        <h4>Trader Information (EU)</h4>
+        <p><strong>optEngineering LP</strong> (Limited Partnership / Εταιρεία Περιορισμένης Ευθύνης)<br>
+        8 Ippodameias Square, 18531 Piraeus, Greece<br>
+        Email: <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a><br>
+        GEMI (EUID): ELGEMI.173705209000<br>
+        VAT (ΑΦΜ): EL802288770<br>
+        Trade name: DC Photon Labs · Product: ReceiptoAI</p>
 
         <h4>Eligibility</h4>
-        <p>You must be at least 13 years old (or the minimum digital consent age in your jurisdiction) to use the App. By using the App, you represent that you meet this requirement.</p>
+        <p>You must be at least 13 years old (or the minimum digital consent age in your jurisdiction) to use the Service. By using the Service, you represent that you meet this requirement.</p>
 
         <h4>License Grant</h4>
-        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal or internal business use, subject to these Terms.</p>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the Service for your personal or internal business use, subject to these Terms.</p>
 
         <h4>AI-Generated Content Disclaimer</h4>
         <p>Data extracted from receipts (amounts, dates, categories, currency conversions, and summaries) is generated using artificial intelligence and OCR technology and is provided <strong>"as is"</strong>. Extraction may contain errors. ReceiptoAI is a productivity tool only and does <strong>not</strong> provide tax, accounting, financial, or legal advice. You are solely responsible for verifying the accuracy of any receipt data or expense report before relying on it for reimbursement, tax filing, or accounting purposes.</p>
 
+        <h4>Email-In Receipts</h4>
+        <p>If you use email forwarding, we provide you a personal address of the form <code>receipts+&lt;alias&gt;@receipts.dcphotonlabs.com</code>. You agree to:</p>
+        <ul>
+          <li>Forward only emails and attachments you are authorized to process and that relate to your own expenses or expenses you manage on behalf of your organization with proper authority.</li>
+          <li>Keep your forwarding address confidential; messages sent to it are attributed to your account.</li>
+          <li>Accept that we process message metadata, body text, and attachments to create and extract receipts, as described in our Privacy Policy.</li>
+          <li>Not use the email-in feature to transmit unlawful, harmful, or unsolicited content.</li>
+        </ul>
+
         <h4>User Responsibilities</h4>
         <ul>
           <li>Provide accurate information and only submit receipts you are authorized to process.</li>
-          <li>Use the App only for lawful purposes.</li>
-          <li>Do not attempt to reverse-engineer, decompile, or misuse the App or its AI/OCR features.</li>
-          <li>Do not upload fraudulent, altered, or misleading receipt images.</li>
+          <li>Use the Service only for lawful purposes.</li>
+          <li>Do not attempt to reverse-engineer, decompile, or misuse the Service or its AI/OCR features.</li>
+          <li>Do not upload fraudulent, altered, or misleading receipt images or emails.</li>
+          <li>Maintain the security of your account credentials and promptly notify us of unauthorized access.</li>
         </ul>
 
-        <h4>Subscriptions &amp; Purchases</h4>
-        <p>Certain features (such as unlimited scans or advanced export) may require a paid subscription or one-time purchase processed through the applicable app store (Apple App Store or Google Play). Billing, renewal, and cancellation are governed by that platform's terms. All purchases are subject to the platform's refund policy.</p>
+        <h4>Subscriptions, Purchases &amp; B2B Licenses</h4>
+        <p><strong>Consumer subscriptions</strong> (such as Premium features including unlimited scans, PDF reports with receipt images, and data export) are sold through the platform where you obtained the app — currently <strong>Google Play</strong> on Android, and the Apple App Store when an iOS version is offered. Billing, renewal, cancellation, and refunds for those purchases are governed by that platform's terms.</p>
+        <p><strong>Organization license codes</strong> may be supplied separately to businesses under a direct agreement with us. B2B licenses grant Premium-equivalent access to named seats within an organization and are not subject to app-store consumer withdrawal rules unless required by your contract with us.</p>
+        <p>Free-tier limits (such as scan and trip limits) may apply unless you have an active Premium subscription or valid B2B license seat.</p>
+
+        <h4>Data Export &amp; Account Deletion</h4>
+        <p>Premium subscribers may download a copy of their data from Account settings (summary JSON or full ZIP archive), subject to a 48-hour rate limit between exports. You may delete your account at any time from Account settings; deletion permanently removes your profile, receipts, reports, stored files, email-alias mapping, and authentication account, as described in our Privacy Policy.</p>
 
         <h4>Intellectual Property</h4>
-        <p>The App, its design, branding, and underlying software are owned by DC Photon Labs (optEngineering LP) and protected by intellectual property laws. You retain ownership of your receipts and data, but grant us a limited license to process them to provide the App's functionality.</p>
+        <p>The Service, its design, branding, and underlying software are owned by DC Photon Labs (optEngineering LP) and protected by intellectual property laws. You retain ownership of your receipts and data, but grant us a limited license to process them to provide the Service's functionality.</p>
 
         <h4>Termination</h4>
-        <p>We may suspend or terminate your access to the App at any time for violation of these Terms or for any reason permitted by law. You may stop using the App and delete your account and stored receipts at any time.</p>
+        <p>We may suspend or terminate your access to the Service at any time for violation of these Terms or for any reason permitted by law. You may stop using the Service and delete your account and stored data at any time as described above.</p>
 
         <h4>Disclaimer of Warranties</h4>
-        <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, express or implied, including fitness for a particular purpose, accuracy of extracted data, or non-infringement.</p>
+        <p>The Service is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, express or implied, including fitness for a particular purpose, accuracy of extracted data, or non-infringement.</p>
 
         <h4>Limitation of Liability</h4>
         <p>To the maximum extent permitted by law, DC Photon Labs (optEngineering LP) shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including financial loss arising from inaccurate expense data or reliance on AI-extracted content.</p>
@@ -549,7 +606,7 @@
         <p>These Terms are governed by the laws of the Hellenic Republic (Greece), without regard to conflict-of-law principles, and without prejudice to any mandatory consumer-protection rights you may have under the laws of your country of residence.</p>
 
         <h4>Changes to These Terms</h4>
-        <p>We may update these Terms periodically. Continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
+        <p>We may update these Terms periodically. Continued use of the Service after changes take effect constitutes acceptance of the revised Terms. Material changes will be reflected by an updated "Last updated" date on this page.</p>
 
         <h4>Contact</h4>
         <p>Questions about these Terms? Email <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>.</p>
@@ -574,6 +631,8 @@
             <p><strong>optEngineering LP</strong></p>
             <p>8 Ippodameias Square</p>
             <p>18531 Piraeus, Greece</p>
+            <p>GEMI: ELGEMI.173705209000</p>
+            <p>VAT: EL802288770</p>
           </address>
         </div>
         <div class="support-card">
