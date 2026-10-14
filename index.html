@@ -441,7 +441,7 @@
       <!-- ReceiptoAI Privacy Policy -->
       <article id="receiptoai-privacy" class="legal-doc">
         <h3>ReceiptoAI — Privacy Policy</h3>
-        <p class="meta">Last updated: September 16, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
+        <p class="meta">Last updated: October 14, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
 
         <h4>Overview</h4>
         <p>This Privacy Policy explains how ReceiptoAI ("the Service"), including our <strong>Android app</strong>, <strong>web app</strong> at <a href="https://receiptoai.com">receiptoai.com</a>, and related backend services, collects, uses, and protects information when you use the Service. The Service is operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our").</p>
@@ -456,21 +456,23 @@
           <li><strong>Expense &amp; trip data:</strong> trip names, date ranges, tags, tag groups, budgets, and expense reports (including generated PDF/CSV exports).</li>
           <li><strong>Signature image:</strong> optional PNG signature you upload for PDF reports, stored in our cloud storage.</li>
           <li><strong>Organization / B2B data:</strong> if you redeem a company license code, we store the organization identifier, your seat membership, and license status linked to your account.</li>
-          <li><strong>Subscription &amp; usage data:</strong> premium status, scan/export limits, last data-export timestamp, and app interactions needed to operate features and prevent abuse.</li>
+          <li><strong>Subscription &amp; purchase data:</strong> whether you have Premium, the plan you bought (monthly or yearly), the store it was bought through (Google Play or web), its renewal and expiry dates, and whether there is a billing problem. We receive this from our subscription manager, <strong>RevenueCat</strong>, linked to your account by an anonymous account identifier. <strong>We never receive or store your full card or bank details</strong>; payments are handled by Google Play or, for web purchases, by Stripe.</li>
+          <li><strong>Usage data:</strong> monthly and daily AI scan counts, last data-export timestamp, and app interactions needed to operate features, enforce plan limits, and prevent abuse.</li>
+          <li><strong>Currency preferences:</strong> your chosen home currency, and exchange rates or card-charged amounts used to convert receipt totals into it.</li>
           <li><strong>Technical &amp; device data:</strong> device model, operating system, browser type (web), locale, crash/diagnostic logs, and IP-derived metadata processed by our infrastructure providers for security and reliability.</li>
         </ul>
 
         <h4>Legal Basis for Processing (GDPR)</h4>
         <p>If you are in the European Economic Area, United Kingdom, or another jurisdiction requiring a legal basis, we process personal data as follows:</p>
         <ul>
-          <li><strong>Performance of a contract</strong> — to create and maintain your account; scan, store, tag, and organize receipts; generate reports and exports; operate email-in forwarding; and provide premium features you subscribe to.</li>
+          <li><strong>Performance of a contract</strong> — to create and maintain your account; scan, store, tag, and organize receipts; generate reports and exports; operate email-in forwarding; and sell, bill, and provide the Premium subscription you buy.</li>
           <li><strong>Legitimate interests</strong> — to secure the Service, prevent fraud and abuse, enforce our terms, improve reliability, and maintain accurate subscription limits, balanced against your rights.</li>
           <li><strong>Legal obligation</strong> — where we must retain or disclose information to comply with applicable law.</li>
           <li><strong>Consent</strong> — only where we explicitly ask for consent (for example, optional permissions you can revoke in device or browser settings). You may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.</li>
         </ul>
 
         <h4>Third-Party AI &amp; OCR Processing</h4>
-        <p>ReceiptoAI uses <strong>OpenRouter</strong> to route receipt extraction requests to third-party artificial intelligence and OCR models (which may include models such as <strong>Google Gemini</strong>). Receipt images, PDFs, and extracted or forwarded text may be transmitted to these providers strictly to perform extraction and are processed under their own data-handling terms. We do not use your receipt content to train third-party foundation models, and we do not sell receipt data to third parties.</p>
+        <p>ReceiptoAI uses <strong>OpenRouter</strong> to route receipt extraction requests to third-party artificial intelligence and OCR models (currently <strong>Google Gemini</strong>). Receipt images, PDFs, and extracted or forwarded text are transmitted to these providers strictly to perform extraction. Every request instructs OpenRouter to use only providers that <strong>do not retain</strong> the request after answering it (zero data retention) and <strong>do not use it for training</strong>. We do not use your receipt content to train AI models, and we do not sell receipt data to third parties.</p>
 
         <h4>Service Providers (Processors)</h4>
         <p>We use trusted providers that process data on our behalf, including:</p>
@@ -479,6 +481,9 @@
           <li><strong>Google Sign-In</strong> — optional account sign-in on mobile and web.</li>
           <li><strong>OpenRouter</strong> — AI inference routing for receipt extraction (see above).</li>
           <li><strong>Resend</strong> — inbound email receipt forwarding at <code>receipts.dcphotonlabs.com</code>.</li>
+          <li><strong>RevenueCat</strong> — subscription management: records your Premium purchases from Google Play and the web, and tells us whether your subscription is active.</li>
+          <li><strong>Stripe</strong> — payment processing for subscriptions bought on the web (card details are entered on Stripe's or RevenueCat's checkout pages, never on ours).</li>
+          <li><strong>Google Play</strong> — billing for subscriptions bought in the Android app, under Google's own terms and privacy policy.</li>
         </ul>
         <p>These providers act as <strong>processors</strong> under our instructions. Some may process data in the United States or other countries outside the European Economic Area. Where required, we rely on appropriate safeguards such as the European Commission's <strong>Standard Contractual Clauses</strong> and/or equivalent transfer mechanisms offered by our providers.</p>
 
@@ -493,17 +498,18 @@
           <li>To extract, organize, tag, and search receipt and expense data on your behalf.</li>
           <li>To process email you forward to your personal ReceiptoAI address and create receipts from attachments or message content.</li>
           <li>To generate expense reports, PDF/CSV exports, and data exports you request.</li>
-          <li>To operate subscriptions, license codes, and usage limits (including free-tier scan limits).</li>
+          <li>To sell and manage subscriptions, license codes, and plan limits (monthly and daily AI scan limits).</li>
           <li>To operate, maintain, secure, and improve the Service.</li>
           <li>To provide customer support and respond to inquiries.</li>
           <li>To detect, prevent, and address technical issues, fraud, or abuse.</li>
         </ul>
 
         <h4>Data Sharing</h4>
-        <p>We do not sell your personal data. We share data only with: (a) AI/OCR and email service providers as described above, strictly to provide the Service; (b) infrastructure providers acting on our behalf; and (c) authorities where required by law.</p>
+        <p>We do not sell your personal data. We share data only with: (a) AI/OCR and email service providers as described above, strictly to provide the Service; (b) infrastructure, subscription, and payment providers acting on our behalf; and (c) authorities where required by law.</p>
 
         <h4>Data Retention</h4>
         <p>We retain receipts, expense data, exports, and account data for as long as your account is active and as needed to provide the Service (for example, historical expense reports). When you delete your account (see below), we erase personal data from our active systems, including Firestore records, email-alias mappings, organization membership links, and files in cloud storage (receipt images, report PDFs, signature images, and prior export files). Residual copies in encrypted backups, if any, are removed on our normal backup rotation cycle (typically within 30 days).</p>
+        <p>Deleting your account does <strong>not</strong> cancel a paid subscription — cancel it first (see our Terms). Purchase and transaction records held by Google Play, Stripe, and RevenueCat are kept by them as required for tax, accounting, and fraud-prevention purposes under their own policies; you can ask us to request deletion of the RevenueCat record linked to your account.</p>
 
         <h4>Your Rights &amp; Self-Service Tools</h4>
         <p>Depending on your location (including under GDPR and CCPA/CPRA), you may have the right to:</p>
@@ -542,7 +548,7 @@
       <!-- ReceiptoAI Terms of Service -->
       <article id="receiptoai-terms" class="legal-doc">
         <h3>ReceiptoAI — Terms of Service</h3>
-        <p class="meta">Last updated: September 16, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
+        <p class="meta">Last updated: October 14, 2026 · Operated by DC Photon Labs (optEngineering LP)</p>
 
         <h4>Acceptance of Terms</h4>
         <p>By downloading, accessing, or using ReceiptoAI (the "Service"), including our Android app, web app at <a href="https://receiptoai.com">receiptoai.com</a>, or related services, you agree to be bound by these Terms of Service ("Terms") and our <a href="#receiptoai-privacy">Privacy Policy</a>. If you do not agree, do not use the Service. The Service is operated by <strong>DC Photon Labs (optEngineering LP)</strong> ("we", "us", "our").</p>
@@ -582,10 +588,28 @@
           <li>Maintain the security of your account credentials and promptly notify us of unauthorized access.</li>
         </ul>
 
-        <h4>Subscriptions, Purchases &amp; B2B Licenses</h4>
-        <p><strong>Consumer subscriptions</strong> (such as Premium features including unlimited scans, PDF reports with receipt images, and data export) are sold through the platform where you obtained the app — currently <strong>Google Play</strong> on Android, and the Apple App Store when an iOS version is offered. Billing, renewal, cancellation, and refunds for those purchases are governed by that platform's terms.</p>
-        <p><strong>Organization license codes</strong> may be supplied separately to businesses under a direct agreement with us. B2B licenses grant Premium-equivalent access to named seats within an organization and are not subject to app-store consumer withdrawal rules unless required by your contract with us.</p>
-        <p>Free-tier limits (such as scan and trip limits) may apply unless you have an active Premium subscription or valid B2B license seat.</p>
+        <h4>Free Plan &amp; Premium</h4>
+        <p>The free plan includes a limited number of AI receipt scans per month and a limited number of active trips. <strong>Premium</strong> adds a larger monthly scan allowance, unlimited active trips, PDF expense reports with receipt images, and data export. Premium works on every platform you sign in to with the same account (Android app and web app), wherever you bought it.</p>
+
+        <h4>Fair-Use Scan Limits</h4>
+        <p>AI scanning has a real cost for every receipt, so every plan has limits, shown in the app: currently <strong>5 AI scans per month</strong> on the free plan and <strong>250 AI scans per month</strong> on Premium, with a limit of <strong>100 AI scans per day</strong> on all plans. Monthly limits reset on the 1st of each month and daily limits at midnight (UTC). When a limit is reached, you can still add and edit receipts by hand; scans that fail are not counted. We may change these limits; we will not reduce the Premium monthly allowance during a billing period you have already paid for, and we will tell you in advance of any reduction.</p>
+
+        <h4>Subscriptions, Billing &amp; Renewal</h4>
+        <ul>
+          <li><strong>Plans and prices.</strong> Premium is sold as a monthly or yearly subscription. The price, billing period, and any taxes are shown before you confirm the purchase. Prices for consumers include VAT where applicable.</li>
+          <li><strong>Where you buy.</strong> In the Android app, Premium is sold and billed through <strong>Google Play</strong> under Google's terms. On the web, Premium is sold by optEngineering LP and paid through our payment partners <strong>Stripe</strong> and <strong>RevenueCat</strong>.</li>
+          <li><strong>Automatic renewal.</strong> Subscriptions renew automatically at the end of each billing period at the then-current price, and you are charged on renewal, until you cancel.</li>
+          <li><strong>Cancelling.</strong> You can cancel at any time: in Google Play (Payments &amp; subscriptions) for Android purchases, or from the "Manage subscription" link in Account settings for web purchases. Cancelling stops future renewals; Premium stays active until the end of the period you have paid for. <strong>Deleting your account or uninstalling the app does not cancel a subscription.</strong></li>
+          <li><strong>Price changes.</strong> We will tell you about a price increase before it applies, and Google Play may ask you to accept it. A new price applies from your next renewal, and you can cancel before then.</li>
+          <li><strong>Failed payments.</strong> If a renewal payment fails, the store may retry it for a short period. If it still fails, Premium ends and your account returns to the free plan; your receipts are kept.</li>
+        </ul>
+
+        <h4>Refunds &amp; Right of Withdrawal (EU/EEA and UK)</h4>
+        <p><strong>Google Play purchases:</strong> refunds and withdrawal are handled by Google under Google Play's refund policy and terms; you can request a refund from Google Play.</p>
+        <p><strong>Web purchases:</strong> if you are a consumer in the EU/EEA or UK, you have the right to withdraw from the subscription within <strong>14 days</strong> of buying it, without giving a reason, by emailing <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a> with your account email and a clear statement that you are withdrawing. By completing a purchase, you ask us to start providing Premium immediately. If you withdraw, we refund your payment within 14 days, minus an amount proportionate to the days of Premium you used before withdrawing. Refunds are made to the original payment method. Outside the withdrawal period, payments are non-refundable except where the law requires otherwise.</p>
+
+        <h4>B2B Licenses</h4>
+        <p><strong>Organization license codes</strong> may be supplied separately to businesses under a direct agreement with us. B2B licenses grant Premium-equivalent access to named seats within an organization, with scan limits and terms set out in that agreement, and are not subject to app-store or consumer withdrawal rules unless required by your contract with us or by law.</p>
 
         <h4>Data Export &amp; Account Deletion</h4>
         <p>Premium subscribers may download a copy of their data from Account settings (summary JSON or full ZIP archive), subject to a 48-hour rate limit between exports. You may delete your account at any time from Account settings; deletion permanently removes your profile, receipts, reports, stored files, email-alias mapping, and authentication account, as described in our Privacy Policy.</p>
