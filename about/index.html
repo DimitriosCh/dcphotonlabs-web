@@ -149,20 +149,6 @@
   section p{color:var(--text-dim);margin:0 0 14px;max-width:720px;}
   section p strong{color:var(--text);}
 
-  .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
-  .card{background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);}
-  .card .what{margin:0 0 2px;font-weight:700;color:var(--text);font-size:15.5px;}
-  .card .where{margin:0;color:var(--text-dim);font-size:14.5px;}
-  .card .when{margin:8px 0 0;color:var(--text-faint);font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
-
-  ol.timeline,ul.plain{list-style:none;margin:0;padding:0;}
-  ol.timeline li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:10px 0;border-bottom:1px dashed var(--border);}
-  ol.timeline li:last-child{border-bottom:none;}
-  .yr{color:var(--text-faint);font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding-top:2px;}
-  .item{color:var(--text-dim);font-size:15px;}
-  .item strong{color:var(--text);}
-  .item em{color:var(--text);}
-
   .personal{
     background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 12%,var(--bg-elev)),color-mix(in srgb,var(--accent-2) 12%,var(--bg-elev)));
     border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;
@@ -179,7 +165,6 @@
     nav.links{gap:12px;}
     .profile{padding:36px 0 28px;}
     section{padding:32px 0;}
-    ol.timeline li{grid-template-columns:1fr;gap:2px;}
   }
 </style>
 </head>
@@ -224,95 +209,7 @@
       <h2>About</h2>
       <p><strong>Dimitrios Christaras</strong> (Δημήτριος Χριστάρας) is a Greek optical physicist working in biomedical and physiological optics and ophthalmic instrumentation. He is <strong>Head of Research &amp; Development at Lightfield Medical</strong> (Minneapolis, USA), <strong>co-founder and Chief Technical Officer of Diestia Systems</strong> (Athens, Greece), and the founder of <strong>DC Photon Labs</strong>, the studio behind ReceiptoAI and TravelFitAI. He chairs the <strong>Greek Chapter of the Marie Curie Alumni Association</strong> and received the <strong>MCAA Best Innovator Award</strong> in 2026.</p>
       <p>He holds a Ph.D. in Biomedical Optics from the University of Murcia, where he worked with Prof. Pablo Artal at the Laboratorio de Óptica on light scattering in vision and imaging; an M.Sc. in particle physics from the Paris XI, VI and VII universities; and a Diploma in Applied Mathematics and Physical Sciences from the National Technical University of Athens. Before turning to vision science he worked on lattice QCD at the University of Cyprus.</p>
-      <p>He was a Marie Curie Early-Stage Researcher in the OpAL training network in Murcia, a research associate at the UCL Institute of Ophthalmology, where he remains an Honorary Research Associate, and a Marie Skłodowska-Curie Individual Fellow (IRWAVE) and senior researcher at Athens Eye Hospital. His research covers double-pass imaging, intraocular scattering, macular pigment, peripheral refraction and the optics of intraocular lenses, and more recently deep-learning methods for wavefront retrieval. He is an inventor on European and US patents and has led projects funded by Eurostars, EIT Health and the Velux Stiftung.</p>
-    </div>
-  </section>
-
-  <section id="roles">
-    <div class="wrap">
-      <h2>Current roles</h2>
-      <div class="roles">
-        <div class="card">
-          <p class="what">Head of R&amp;D</p>
-          <p class="where">Lightfield Medical, Minneapolis, USA</p>
-          <p class="when">Since September 2025</p>
-        </div>
-        <div class="card">
-          <p class="what">Co-founder &amp; CTO</p>
-          <p class="where"><a href="https://diestia.com/">Diestia Systems</a>, Athens, Greece</p>
-          <p class="when">Since May 2022</p>
-        </div>
-        <div class="card">
-          <p class="what">Founder</p>
-          <p class="where"><a href="/">DC Photon Labs</a> — ReceiptoAI &amp; TravelFitAI</p>
-          <p class="when">App studio</p>
-        </div>
-        <div class="card">
-          <p class="what">Chair, Greek Chapter</p>
-          <p class="where"><a href="https://www.mariecuriealumni.eu/">Marie Curie Alumni Association</a></p>
-          <p class="when">Since September 2024</p>
-        </div>
-        <div class="card">
-          <p class="what">Honorary Research Associate</p>
-          <p class="where">UCL Institute of Ophthalmology, London</p>
-          <p class="when">Since July 2017</p>
-        </div>
-        <div class="card">
-          <p class="what">Guest Lecturer</p>
-          <p class="where">National and Kapodistrian University of Athens</p>
-          <p class="when">M.Sc. in Aberration Treatment &amp; Refractive Surgery</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="wrap">
-      <h2>Education</h2>
-      <ol class="timeline">
-        <li><span class="yr">2016</span><span class="item"><strong>Ph.D. in Biomedical Optics</strong>, Laboratorio de Óptica, University of Murcia, Spain. Thesis: <em>Light Scattering Phenomena in Vision and in Imaging</em>; supervisor Prof. Pablo Artal.</span></li>
-        <li><span class="yr">2009</span><span class="item"><strong>M.Sc. in Physics</strong> (Noyaux, Particules, Astroparticules et Cosmologie), Universities Paris XI, Paris VI and Paris VII, France.</span></li>
-        <li><span class="yr">2008</span><span class="item"><strong>Diploma in Applied Mathematics and Physical Sciences</strong>, National Technical University of Athens, Greece.</span></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="publications">
-    <div class="wrap">
-      <h2>Selected publications</h2>
-      <ol class="timeline">
-        <li><span class="yr">2026</span><span class="item">S. Tsoukalas, A. Pennos, C. Bonel Pla, A. Charonis, P. Artal, H. Ginis, <strong>D. Christaras</strong>. <a href="https://doi.org/10.1007/s44402-026-00156-7">Dynamic tear film stability assessed via an open-view double-pass imaging system</a>. <em>Ophthalmic and Physiological Optics</em> 46(5):1188–1195.</span></li>
-        <li><span class="yr">2026</span><span class="item">Z. Lin, <strong>D. Christaras</strong>, H. Ginis, Z. Yang, W. Lan, P. Artal. <a href="https://doi.org/10.1167/iovs.67.4.34">Impact of myopia control spectacles on retinal image contrast</a>. <em>Invest. Ophthalmol. Vis. Sci.</em> 67(4):34.</span></li>
-        <li><span class="yr">2026</span><span class="item">K. Ntatsis, <strong>D. Christaras</strong>, A. Arias, S. Wahl, P. Artal, H. Ginis. <a href="https://doi.org/10.1117/12.3107013">Deep learning wavefront retrieval in a double-pass setup</a>. <em>Proc. SPIE</em> 14110, Computational Optics 2026.</span></li>
-        <li><span class="yr">2025</span><span class="item">K. Ntatsis, <strong>D. Christaras</strong>, P. Artal, H. Ginis. <a href="https://doi.org/10.1364/boe.559749">Deep learning ocular aberration retrieval from simulated retinal images under straylight</a>. <em>Biomed. Opt. Express</em> 16(7):2709–2718.</span></li>
-        <li><span class="yr">2023</span><span class="item"><strong>D. Christaras</strong>, S. Tsoukalas, P. Papadogiannis, C. Börjeson, M. Volny, L. Lundström, P. Artal, H. Ginis. <a href="https://doi.org/10.1364/boe.489881">Central and peripheral refraction measured by a novel double-pass instrument</a>. <em>Biomed. Opt. Express</em> 14:2608–2617.</span></li>
-        <li><span class="yr">2019</span><span class="item"><strong>D. Christaras</strong>, H. Ginis, A. Pennos, J. Mompeán, P. Artal. <a href="https://doi.org/10.1364/boe.10.003572">Objective method for measuring the macular pigment optical density in the eye</a>. <em>Biomed. Opt. Express</em> 10:3572–3583. Among the European Vision Institute’s top 10 publications of 2019.</span></li>
-      </ol>
-      <p style="margin-top:14px;">Full list on <a href="https://scholar.google.com/citations?user=XlKI2_cAAAAJ">Google Scholar</a>.</p>
-    </div>
-  </section>
-
-  <section id="patents">
-    <div class="wrap">
-      <h2>Patents</h2>
-      <ol class="timeline">
-        <li><span class="yr">2026</span><span class="item"><em>Methods for analyzing the eye</em>. US 2026/0026687 A1 (Lightfield Medical Inc.).</span></li>
-        <li><span class="yr">2025</span><span class="item"><em>Systems and methods for analyzing the eye</em>. US 12,440,102 B2 (Lightfield Medical Inc.).</span></li>
-        <li><span class="yr">2025</span><span class="item"><em>Optical instrument for measuring the density of macular pigment in the eye and associated method</em>. EP 3 482 677 B1 (Universidad de Murcia).</span></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="awards">
-    <div class="wrap">
-      <h2>Awards &amp; recognition</h2>
-      <ol class="timeline">
-        <li><span class="yr">2026</span><span class="item"><strong>MCAA Best Innovator Award</strong>, Marie Curie Alumni Association.</span></li>
-        <li><span class="yr">2020</span><span class="item">Marie Skłodowska-Curie Individual Fellowship, <em>IRWAVE – Imaging Refractor: Wide Angle Vision Evaluation</em>.</span></li>
-        <li><span class="yr">2020</span><span class="item">Top 10 publications of 2019, European Vision Institute.</span></li>
-        <li><span class="yr">2018</span><span class="item">Translational Research and Innovation Award by Visiometrics, best oral presentation, VPO 2018.</span></li>
-        <li><span class="yr">2017</span><span class="item">“Young Researcher in Focus”, European Vision Institute.</span></li>
-      </ol>
+      <p>He was a Marie Curie Early-Stage Researcher in the OpAL training network in Murcia, a research associate at the UCL Institute of Ophthalmology, where he remains an Honorary Research Associate, and a Marie Skłodowska-Curie Individual Fellow (IRWAVE) and senior researcher at Athens Eye Hospital. His research covers double-pass imaging, intraocular scattering, macular pigment, peripheral refraction and the optics of intraocular lenses, and more recently deep-learning methods for wavefront retrieval. He is an inventor on European and US patents, has led projects funded by Eurostars, EIT Health and the Velux Stiftung, and teaches as a guest lecturer at the National and Kapodistrian University of Athens. His publications are listed on <a href="https://scholar.google.com/citations?user=XlKI2_cAAAAJ">Google Scholar</a>.</p>
     </div>
   </section>
 
