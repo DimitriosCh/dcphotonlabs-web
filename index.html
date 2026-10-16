@@ -458,7 +458,7 @@
       <!-- ReceiptoAI Privacy Policy -->
       <article id="receiptoai-privacy" class="legal-doc">
         <h3>ReceiptoAI — Privacy Policy</h3>
-        <p class="meta">Last updated: October 14, 2026 · Operated by DC Photon Labs (Dimitrios Christaras L.P.)</p>
+        <p class="meta">Last updated: October 17, 2026 · Operated by DC Photon Labs (Dimitrios Christaras L.P.)</p>
 
         <h4>Overview</h4>
         <p>This Privacy Policy explains how ReceiptoAI ("the Service"), including our <strong>Android app</strong>, <strong>web app</strong> at <a href="https://receiptoai.com">receiptoai.com</a>, and related backend services, collects, uses, and protects information when you use the Service. The Service is operated by <strong>DC Photon Labs (Dimitrios Christaras L.P.)</strong> ("we", "us", "our").</p>
@@ -468,7 +468,7 @@
         <ul>
           <li><strong>Account data:</strong> email address, authentication identifiers (including when you sign in with email/password or Google Sign-In), display name, language and currency preferences, and onboarding choices.</li>
           <li><strong>Tax &amp; profile data:</strong> optional tax identification numbers you provide (such as Greek <strong>ΑΦΜ</strong> / EU VAT ID), account type (personal or business), and optional signature name fields.</li>
-          <li><strong>Receipt content:</strong> images and PDFs you capture, upload, or forward; data extracted from them (merchant name, date, line items, amounts, currency, category, merchant tax IDs found on receipts); and edits you make.</li>
+          <li><strong>Receipt content:</strong> images and PDFs you capture, upload, or forward, including travel documents such as boarding passes and train tickets (which can show your name, route, flight or train number, and seat); data extracted from them (merchant name, date, line items, amounts, currency, category, merchant tax IDs found on receipts); and edits you make.</li>
           <li><strong>Email-in data:</strong> if you use email forwarding, we assign you a personal forwarding address (<code>receipts+&lt;alias&gt;@receipts.dcphotonlabs.com</code>) and process inbound messages you send there, including sender address, subject, message body or plain-text content, attachments, and delivery metadata needed to create receipts.</li>
           <li><strong>Expense &amp; trip data:</strong> trip names, date ranges, tags, tag groups, budgets, and expense reports (including generated PDF/CSV exports).</li>
           <li><strong>Signature image:</strong> optional PNG signature you upload for PDF reports, stored in our cloud storage.</li>
@@ -476,6 +476,7 @@
           <li><strong>Subscription &amp; purchase data:</strong> whether you have Premium, the plan you bought (monthly or yearly), the store it was bought through (Google Play or web), its renewal and expiry dates, and whether there is a billing problem. We receive this from our subscription manager, <strong>RevenueCat</strong>, linked to your account by an anonymous account identifier. <strong>We never receive or store your full card or bank details</strong>; payments are handled by Google Play or, for web purchases, by Stripe.</li>
           <li><strong>Usage data:</strong> monthly and daily AI scan counts, last data-export timestamp, and app interactions needed to operate features, enforce plan limits, and prevent abuse.</li>
           <li><strong>Currency preferences:</strong> your chosen home currency, and exchange rates or card-charged amounts used to convert receipt totals into it.</li>
+          <li><strong>Crash reports (Android app):</strong> when the app crashes or hits an unexpected error, <strong>Firebase Crashlytics</strong> records the error and where it happened in the app's code (stack trace), the app state at that moment, point-in-time device information (model, operating system version, orientation, free memory and disk space), the app version, and a random Crashlytics installation identifier used to count how many devices are affected. Crash reports do not include your receipts, extracted amounts, or account email.</li>
           <li><strong>Technical &amp; device data:</strong> device model, operating system, browser type (web), locale, crash/diagnostic logs, and IP-derived metadata processed by our infrastructure providers for security and reliability.</li>
         </ul>
 
@@ -496,6 +497,7 @@
         <ul>
           <li><strong>Google Firebase / Google Cloud</strong> — authentication, database (Firestore), file storage, serverless functions, and hosting (including <code>receiptoai.com</code>).</li>
           <li><strong>Google Sign-In</strong> — optional account sign-in on mobile and web.</li>
+          <li><strong>Firebase Crashlytics</strong> (Google) — crash and error reporting for the Android app, so we can find and fix problems.</li>
           <li><strong>OpenRouter</strong> — AI inference routing for receipt extraction (see above).</li>
           <li><strong>Resend</strong> — inbound email receipt forwarding at <code>receipts.dcphotonlabs.com</code>.</li>
           <li><strong>RevenueCat</strong> — subscription management: records your Premium purchases from Google Play and the web, and tells us whether your subscription is active.</li>
@@ -518,7 +520,7 @@
           <li>To sell and manage subscriptions, license codes, and plan limits (monthly and daily AI scan limits).</li>
           <li>To operate, maintain, secure, and improve the Service.</li>
           <li>To provide customer support and respond to inquiries.</li>
-          <li>To detect, prevent, and address technical issues, fraud, or abuse.</li>
+          <li>To detect, prevent, and address technical issues, fraud, or abuse, including diagnosing app crashes from crash reports (legitimate interest in a reliable Service).</li>
         </ul>
 
         <h4>Data Sharing</h4>
@@ -526,6 +528,7 @@
 
         <h4>Data Retention</h4>
         <p>We retain receipts, expense data, exports, and account data for as long as your account is active and as needed to provide the Service (for example, historical expense reports). When you delete your account (see below), we erase personal data from our active systems, including Firestore records, email-alias mappings, organization membership links, and files in cloud storage (receipt images, report PDFs, signature images, and prior export files). Residual copies in encrypted backups, if any, are removed on our normal backup rotation cycle (typically within 30 days).</p>
+        <p>Crash reports are kept by Firebase Crashlytics for <strong>90 days</strong> and then deleted automatically.</p>
         <p>Deleting your account does <strong>not</strong> cancel a paid subscription — cancel it first (see our Terms). Purchase and transaction records held by Google Play, Stripe, and RevenueCat are kept by them as required for tax, accounting, and fraud-prevention purposes under their own policies; you can ask us to request deletion of the RevenueCat record linked to your account.</p>
 
         <h4>Your Rights &amp; Self-Service Tools</h4>
