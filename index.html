@@ -321,6 +321,7 @@
           <div class="card-links">
             <a href="#receiptoai-privacy">Privacy Policy</a>
             <a href="#receiptoai-terms">Terms of Service</a>
+            <a href="#receiptoai-delete-account">Delete your account</a>
           </div>
         </article>
 
@@ -338,6 +339,7 @@
         <button class="tab-btn" data-target="travelfitai-terms" type="button">TravelFitAI · Terms</button>
         <button class="tab-btn" data-target="receiptoai-privacy" type="button">ReceiptoAI · Privacy</button>
         <button class="tab-btn" data-target="receiptoai-terms" type="button">ReceiptoAI · Terms</button>
+        <button class="tab-btn" data-target="receiptoai-delete-account" type="button">ReceiptoAI · Delete account</button>
       </div>
 
       <!-- TravelFitAI Privacy Policy -->
@@ -458,7 +460,7 @@
       <!-- ReceiptoAI Privacy Policy -->
       <article id="receiptoai-privacy" class="legal-doc">
         <h3>ReceiptoAI — Privacy Policy</h3>
-        <p class="meta">Last updated: October 17, 2026 · Operated by DC Photon Labs (Dimitrios Christaras L.P.)</p>
+        <p class="meta">Last updated: October 22, 2026 · Operated by DC Photon Labs (Dimitrios Christaras L.P.)</p>
 
         <h4>Overview</h4>
         <p>This Privacy Policy explains how ReceiptoAI ("the Service"), including our <strong>Android app</strong>, <strong>web app</strong> at <a href="https://receiptoai.com">receiptoai.com</a>, and related backend services, collects, uses, and protects information when you use the Service. The Service is operated by <strong>DC Photon Labs (Dimitrios Christaras L.P.)</strong> ("we", "us", "our").</p>
@@ -527,7 +529,7 @@
         <p>We do not sell your personal data. We share data only with: (a) AI/OCR and email service providers as described above, strictly to provide the Service; (b) infrastructure, subscription, and payment providers acting on our behalf; and (c) authorities where required by law.</p>
 
         <h4>Data Retention</h4>
-        <p>We retain receipts, expense data, exports, and account data for as long as your account is active and as needed to provide the Service (for example, historical expense reports). When you delete your account (see below), we erase personal data from our active systems, including Firestore records, email-alias mappings, organization membership links, and files in cloud storage (receipt images, report PDFs, signature images, and prior export files). Residual copies in encrypted backups, if any, are removed on our normal backup rotation cycle (typically within 30 days).</p>
+        <p>We retain receipts, expense data, exports, and account data for as long as your account is active and as needed to provide the Service (for example, historical expense reports). When you delete your account (see below), we erase personal data from our active systems, including Firestore records, email-alias mappings, organization membership links, and files in cloud storage (receipt images, report PDFs, signature images, and prior export files). Residual copies in encrypted database backups are overwritten on our normal backup rotation, within 8 weeks. Step-by-step instructions are on our <a href="#receiptoai-delete-account">account deletion page</a>.</p>
         <p>Crash reports are kept by Firebase Crashlytics for <strong>90 days</strong> and then deleted automatically.</p>
         <p>Deleting your account does <strong>not</strong> cancel a paid subscription — cancel it first (see our Terms). Purchase and transaction records held by Google Play, Stripe, and RevenueCat are kept by them as required for tax, accounting, and fraud-prevention purposes under their own policies; you can ask us to request deletion of the RevenueCat record linked to your account.</p>
 
@@ -657,6 +659,41 @@
         <p>Questions about these Terms? Email <a href="mailto:dc.photon.labs@gmail.com">dc.photon.labs@gmail.com</a>.</p>
       </article>
 
+      <!-- ReceiptoAI account deletion (linked from Google Play's data deletion field) -->
+      <article id="receiptoai-delete-account" class="legal-doc">
+        <h3>ReceiptoAI — Delete your account and data</h3>
+        <p class="meta">ReceiptoAI by DC Photon Labs (Dimitrios Christaras L.P.)</p>
+
+        <p>You can delete your ReceiptoAI account and all of its data at any time, from the app, from the web, or by asking us. You do not need the app installed.</p>
+
+        <h4>Option 1 — in the web app (no app needed)</h4>
+        <ol>
+          <li>Go to <a href="https://receiptoai.com">receiptoai.com</a> and sign in with the account you want to delete.</li>
+          <li>Open <strong>Settings</strong> and scroll to the bottom.</li>
+          <li>Choose <strong>Delete account</strong> and confirm.</li>
+        </ol>
+
+        <h4>Option 2 — in the Android app</h4>
+        <ol>
+          <li>Open ReceiptoAI and tap your <strong>Profile</strong>.</li>
+          <li>Scroll down, tap <strong>Delete account</strong> and confirm.</li>
+        </ol>
+
+        <h4>Option 3 — ask us</h4>
+        <p>If you can no longer sign in, email <a href="mailto:dc.photon.labs@gmail.com?subject=ReceiptoAI%20account%20deletion">dc.photon.labs@gmail.com</a> with the subject "ReceiptoAI account deletion", from the email address of the account. We confirm and delete it within 30 days.</p>
+
+        <h4>What is deleted</h4>
+        <p>Your profile and sign-in account, all receipts and their images, extracted data, trips, tags, expense reports and their PDFs, signature images, data exports, your email-in address, and your organization membership. Deletion is permanent and cannot be undone — export your data first from Settings if you want a copy.</p>
+
+        <h4>What is kept, and for how long</h4>
+        <ul>
+          <li><strong>Backups:</strong> encrypted database backups that still contain your data are overwritten on their normal rotation, within 8 weeks.</li>
+          <li><strong>Crash reports</strong> (Firebase Crashlytics) are deleted automatically after 90 days.</li>
+          <li><strong>Purchases:</strong> deleting your account does not cancel a subscription — cancel it in Google Play first. Google Play, Stripe and RevenueCat keep purchase records as required for tax, accounting and fraud prevention under their own policies; you can ask us to request deletion of the RevenueCat record linked to your account.</li>
+        </ul>
+        <p>More detail is in our <a href="#receiptoai-privacy">Privacy Policy</a>.</p>
+      </article>
+
     </div>
   </section>
 
@@ -728,7 +765,7 @@
     applyTheme(current === "light" ? "dark" : "light");
   });
 
-  var docIds = ["travelfitai-privacy","travelfitai-terms","receiptoai-privacy","receiptoai-terms"];
+  var docIds = ["travelfitai-privacy","travelfitai-terms","receiptoai-privacy","receiptoai-terms","receiptoai-delete-account"];
   var tabButtons = Array.prototype.slice.call(document.querySelectorAll(".tab-btn"));
 
   function showDoc(id){
